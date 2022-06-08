@@ -1,0 +1,134 @@
+apiVersion: v1
+entries:
+  adminer:
+  - apiVersion: v2
+    appVersion: 4.8.1
+    created: "2022-06-08T15:37:35.2484822+02:00"
+    description: Adminer is a full-featured database management tool written in PHP.
+      Conversely to phpMyAdmin, it consist of a single file ready to deploy to the
+      target server. Adminer is available for MySQL, MariaDB, PostgreSQL, SQLite,
+      MS SQL, Oracle, Firebird, SimpleDB, Elasticsearch and MongoDB
+    digest: 3dcb49d5f189d0c4b76940710a2f4cfee31e4c4439084b2350cf792cc0585173
+    home: https://www.adminer.org
+    icon: https://raw.githubusercontent.com/Kong/docker-official-docs/master/adminer/logo.png
+    keywords:
+    - adminer
+    - postgres
+    - mysql
+    - sqlite
+    - elasticsearch
+    - mongodb
+    - database
+    - sql
+    maintainers:
+    - email: antoine.michea@opencellsoft.com
+      name: Antoine Michéa
+    name: adminer
+    urls:
+    - https://ryder05.github.io/Fantastic-Charts/charts/adminer-0.2.0.tgz
+    version: 0.2.0
+  keycloak:
+  - apiVersion: v2
+    appVersion: 17.0.1-legacy
+    created: "2022-06-08T15:37:35.2534686+02:00"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.3.13
+    description: Open Source Identity and Access Management For Modern Applications
+      and Services
+    digest: 191a658b0ce2a5b6edc1a0c442cc66898149caaafbc4dcc0ab31b3ed58aa36c5
+    home: https://www.keycloak.org/
+    icon: https://www.keycloak.org/resources/images/keycloak_icon_512px.svg
+    keywords:
+    - sso
+    - idm
+    - openid connect
+    - saml
+    - kerberos
+    - ldap
+    maintainers:
+    - email: unguiculus@gmail.com
+      name: unguiculus
+    - email: thomas.darimont+github@gmail.com
+      name: thomasdarimont
+    name: keycloak
+    sources:
+    - https://github.com/codecentric/helm-charts
+    - https://github.com/jboss-dockerfiles/keycloak
+    - https://github.com/bitnami/charts/tree/master/bitnami/postgresql
+    urls:
+    - https://ryder05.github.io/Fantastic-Charts/charts/keycloak-18.1.1.tgz
+    version: 18.1.1
+  logs-downloader:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2022-06-08T15:37:35.2564701+02:00"
+    description: A Helm chart for Kubernetes that deploy log-downloader for loki
+    digest: b7a6ab822975926e3eda575d5640aeec3e4bcb00e60b39c508af2ced80877d0b
+    home: https://charts.opencellsoft.com
+    icon: https://opencellsoft.com/img/logo-opencell.svg
+    maintainers:
+    - email: antoine.michea@opencellsoft.com
+      name: Antoine Michéa
+    - email: auguste.alexandre@opencellsoft.com
+      name: Auguste Alexandre
+    name: logs-downloader
+    type: application
+    urls:
+    - https://ryder05.github.io/Fantastic-Charts/charts/logs-downloader-0.1.0.tgz
+    version: 0.1.0
+  opencell:
+  - apiVersion: v1
+    appVersion: 10.0.0
+    created: "2022-06-08T15:37:35.2624695+02:00"
+    dependencies:
+    - condition: opencell.persistence.deployPostgres
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 8.9.5
+    description: Open Source agile monetization platform.
+    digest: 910a2e78de03c7e59bf19b7dc96188c20b8330423d712b6e517feb2a9be488f9
+    home: https://opencellsoft.com
+    icon: https://opencellsoft.com/img/logo-opencell.svg
+    keywords:
+    - billing
+    - mediation
+    - invoicing
+    - dunnning
+    - ar manager
+    - order
+    maintainers:
+    - email: antoine.michea@opencellsoft.com
+      name: antoinemichea
+    name: opencell
+    sources:
+    - https://
+    urls:
+    - https://ryder05.github.io/Fantastic-Charts/charts/opencell-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-06-08T15:37:35.2460688+02:00"
+    dependencies:
+    - name: logs-downloader
+      repository: https://charts.opencellsoft.com/opencell
+      version: ' 0.1.0'
+    - name: adminer
+      repository: https://charts.opencellsoft.com/opencell
+      version: 0.2.0
+    - name: opencell
+      repository: https://charts.opencellsoft.com/opencell
+      version: 1.0.0
+    - name: keycloak
+      repository: https://codecentric.github.io/helm-charts
+      version: 18.1.1
+    description: A Helm chart for Kubernetes
+    digest: e97405b63bc0eac99ee49c40af3e619368774b13c0ae6e203cfae9ea7b35826b
+    name: opencell
+    type: application
+    urls:
+    - https://ryder05.github.io/Fantastic-Charts/Fantastic%20Charts/opencell-0.2.0.tgz
+    version: 0.2.0
+generated: "2022-06-08T15:37:35.2084383+02:00"
